@@ -4,6 +4,19 @@
 ### Base URL
 - The base URL for the API is `http://localhost:3001` unless you configure it differently.
 
+### Scoring method
+- the score is calculated as follows :
+- we only consider tutors who teach the same subject for the same grade.
+- if the tutor has slots avaiable in days that will be sufficent for the number of classes gets 10 points
+- for each class if the tutor has sufficent slots for the duration and in the prefered time and prefered day gets 15 points
+- for each class if the tutor has sufficent slots for the duration prefered day but not in the prefered time and  gets 10 points
+
+### AI mode and conventional mode 
+- They both work with the same algorithm the only diffrence is how each one gets the student prefrences.
+- The AI mode uses openAI version 4 with the new function calling capbilties which is utilized here to create the studentPrefrences JSON with good acuracy.
+- Subjects are enumed to maths,arabic,science .
+- The start and end time refer to the start and end of the prefered time in 24h format.
+
 ### Endpoints
 
 #### 1. Match Tutors
@@ -128,4 +141,10 @@
 - Make sure to replace the base URL with the actual URL where the API is hosted.
 - Always check the API documentation for any updates or changes.
 
-This documentation provides a high-level overview of the available endpoints, their purposes, and example requests and responses. Ensure to include additional details as needed, such as authentication requirements or specific error messages.
+### conventional mode
+
+<img width="798" alt="Screenshot 2023-11-20 at 11 22 48 PM" src="https://github.com/Ahmed-Elghobashy/Tutorials_booking_app/assets/61662872/f56294b6-9fe5-4485-b1ff-d6af67d8d516">
+
+### AI mode 
+<img width="655" alt="Screenshot 2023-11-20 at 11 35 25 PM" src="https://github.com/Ahmed-Elghobashy/Tutorials_booking_app/assets/61662872/d48b3f6f-6b57-4429-91f0-fb458d03d723">
+
